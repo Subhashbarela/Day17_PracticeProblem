@@ -10,7 +10,11 @@ namespace Day17_IndianSelciusData
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Indian Selcius Data Program");
+            string filePath = "C:\\Users\\Shiva027\\Desktop\\BridgeLabsRemapProgram\\Day17_IndianSelciusData\\Day17_IndianSelciusData\\CensusDataFile.csv";
+            StateCensusAnalyser analyser = new StateCensusAnalyser(filePath);
+            int numberOfRecords = analyser.LoadDataFromCSV();
+            Console.WriteLine("Number of records in the file: " + numberOfRecords);
+            Console.ReadLine();
         }
     }
 }
