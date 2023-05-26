@@ -1,12 +1,14 @@
 using Day17_IndianSelciusData;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NUnit.Framework;
 
 namespace IndianSelciusDataNUnitTest
 {
-    
+    [TestClass]
     public class Tests
     {
-        [Test]       
+        [TestMethod]
+        [ExpectedException(typeof(Exception))]
         public void LoadDataFromCSV_ShouldThrowException_WhenDelimiterIsIncorrect()
         {
             // Arrange
@@ -16,7 +18,7 @@ namespace IndianSelciusDataNUnitTest
             // Act and Assert
             try
             {
-                analyser.LoadDataFromCSV(); // Use semicolon as delimiter instead of comma
+                analyser.LoadDataFromCSV(';'); // Use semicolon as delimiter instead of comma
             }
             catch (Exception ex)
             {
